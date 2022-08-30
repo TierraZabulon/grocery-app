@@ -3,7 +3,7 @@ const router = express.Router();
 const listController = require("../controllers/list");
 // const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
-// router.get('/', ensureAuth, todosController.getTodos)
+router.get("/", ensureAuth, todosController.getTodos);
 
 router.post("/createlist", listController.createlist);
 
