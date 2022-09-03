@@ -1,16 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const listController = require("../controllers/list");
-// const { ensureAuth, ensureGuest } = require('../middleware/auth')
+const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
-router.get("/", ensureAuth, todosController.getTodos);
+router.get("/", ensureAuth, listController.getList);
 
-router.post("/createlist", listController.createlist);
+router.post("/createList", listController.createList);
 
-router.put("/markComplete", listController.markComplete);
-
-router.put("/markIncomplete", listController.markIncomplete);
-
-router.delete("/deletelist", listController.deletelist);
+router.delete("/deleteList", listController.deleteList);
 
 module.exports = router;
